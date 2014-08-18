@@ -54,10 +54,12 @@ Source: "C:\Users\Ondrap\Documents\xcs\onboard\urbiscript\*"; DestDir: "{app}\sh
 ;xobjects
 Source: "C:\Users\Ondrap\Documents\xcs\onboard\build\bin\RelWithDebInfo\xlinedrawer.dll"; DestDir: "{app}\lib\xcs\xobject"; Flags: ignoreversion; Components: main 
 Source: "C:\Users\Ondrap\Documents\xcs\onboard\build\lib\RelWithDebInfo\*.dll"; DestDir: "{app}\lib\xcs\xobject"; Flags: ignoreversion; Components: main
+Source: "C:\Users\Ondrap\Documents\xcs\onboard\build\lib\RelWithDebInfo\xobject.lib"; DestDir: "{app}\bin"; Flags: ignoreversion; Components: main
 Source: "C:\Users\Ondrap\Documents\xcs\onboard\build\bin\RelWithDebInfo\*.dll"; DestDir: "{app}\bin"; Excludes: "xlinedrawer.dll"; Flags: ignoreversion; Components: main
 ;xcs source files
 ;xcs
 Source: "C:\Users\Ondrap\Documents\xcs\onboard\src\xcs\exception.hpp"; DestDir: "{app}\include\xcs"; Flags: ignoreversion; Components: source
+Source: "C:\Users\Ondrap\Documents\xcs\onboard\src\xcs\logging.hpp"; DestDir: "{app}\include\xcs"; Flags: ignoreversion; Components: source
 Source: "C:\Users\Ondrap\Documents\xcs\onboard\build\xcs\xcs_export.h"; DestDir: "{app}\include\xcs"; Flags: ignoreversion; Components: source
 ;xci
 Source: "C:\Users\Ondrap\Documents\xcs\onboard\src\xcs\xci\xci.hpp"; DestDir: "{app}\include\xcs\xci"; Flags: ignoreversion; Components: source
@@ -68,8 +70,16 @@ Source: "C:\Users\Ondrap\Documents\xcs\onboard\build\xcs\nodes\xobject\xobject_e
 ;xstructs
 Source: "C:\Users\Ondrap\Documents\xcs\onboard\src\xcs\types\*"; DestDir: "{app}\include\xcs\types"; Excludes: "type_utils.hpp"; Flags: ignoreversion; Components: source
 
+;xcs general cmakes
+Source: "C:\Users\Ondrap\Documents\xcs\onboard\src\CMakeLists_install.txt"; DestDir: "{app}\share\"; DestName: CMakeLists.txt; Flags: ignoreversion; Components: source
+Source: "C:\Users\Ondrap\Documents\xcs\onboard\src\cmake\FindUrbiAll.cmake"; DestDir: "{app}\share\cmake\xcs"; Flags: ignoreversion; Components: source
+Source: "C:\Users\Ondrap\Documents\xcs\onboard\src\cmake\common.cmake"; DestDir: "{app}\share\cmake\xcs"; Flags: ignoreversion; Components: source
+Source: "C:\Users\Ondrap\Documents\xcs\onboard\src\cmake\platforms.cmake"; DestDir: "{app}\share\cmake\xcs"; Flags: ignoreversion; Components: source
+Source: "C:\Users\Ondrap\Documents\xcs\onboard\src\cmake\xlibrary.cmake"; DestDir: "{app}\share\cmake\xcs"; Flags: ignoreversion; Components: source
+Source: "C:\Users\Ondrap\Documents\xcs\onboard\src\cmake\config_install.cmake"; DestDir: "{app}\share\cmake\xcs"; DestName: config.cmake; Flags: ignoreversion; Components: source
+
 ;xcs example xobject
-Source: "C:\Users\Ondrap\Documents\xcs\onboard\examples\nodes\*"; DestDir: "{app}\share\xcs\examples\nodes"; Flags: ignoreversion recursesubdirs createallsubdirs; Components: source
+Source: "C:\Users\Ondrap\Documents\xcs\onboard\src\xcs\nodes\multiplexer.xob\*"; DestDir: "{app}\share\xcs\examples\nodes\multiplexer.xob"; Flags: ignoreversion; Components: source
 
 ;xsettings files
 Source: "C:\Users\Ondrap\Documents\xcs\onboard\xsettings\*"; DestDir: "{app}\etc\xcs\xsettings"; Flags: ignoreversion recursesubdirs createallsubdirs; Components: main
@@ -96,6 +106,7 @@ Source: "C:\Frameworks\boost_64\lib\boost_thread-vc120-mt-1_55.dll"; DestDir: "{
 Source: "C:\Frameworks\boost_64\lib\boost_regex-vc120-mt-1_55.dll"; DestDir: "{app}\bin"; Flags: ignoreversion; Components: main
 
 Source: "C:\Frameworks\boost_64\lib\*.dll"; DestDir: "{app}\bin"; Flags: ignoreversion; Components: source
+Source: "C:\Frameworks\boost_64\lib\*.lib"; DestDir: "{app}\lib"; Flags: ignoreversion; Components: source
 Source: "C:\Frameworks\boost_64\include\*"; DestDir: "{app}\include"; Flags: recursesubdirs createallsubdirs ignoreversion; Components: source
 ;libav
 Source: "C:\Frameworks\libav-9_7\bin\*.dll"; DestDir: "{app}\bin"; Flags: ignoreversion; Components: main
