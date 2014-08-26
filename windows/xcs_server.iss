@@ -6,6 +6,8 @@
 #define MyAppPublisher "X-Copter Studio team"
 #define MyAppURL "http://drones.ms.mff.cuni.cz/xcs/wiki"
 #define MyAppExeName "run.bat"
+#define XCSdir "C:\Users\Ondrap\Documents\xcs"
+#define NODEdir "C:\Users\Ondrap\Documents\xcs-installer\windows"
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application.
@@ -40,10 +42,10 @@ Name: "main"; Description: "Main Files"; Types: full compact custom; Flags: fixe
 Name: "nodejs"; Description: "Nodejs"; Types: full
 
 [Files]
-Source: "C:\Users\Ondrap\Documents\xcs-installer\windows\node-v0.10.29-x64.msi"; DestDir: "{tmp}"; Components: nodejs
-Source: "C:\Users\Ondrap\Documents\xcs\server\run.bat"; DestDir: "{app}"; Flags: ignoreversion; Components: main
-Source: "C:\Users\Ondrap\Documents\xcs\server\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs; Components: main
-Source: "C:\Users\Ondrap\Documents\xcs\server\setup.bat"; DestDir: "{app}"; Flags: ignoreversion; Components: main
+Source: "{#NODEdir}\node.msi"; DestDir: "{tmp}"; Components: nodejs
+Source: "{#XCSdir}\server\run.bat"; DestDir: "{app}"; Flags: ignoreversion; Components: main
+Source: "{#XCSdir}\server\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs; Components: main
+Source: "{#XCSdir}\server\setup.bat"; DestDir: "{app}"; Flags: ignoreversion; Components: main
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
@@ -51,7 +53,7 @@ Name: "{group}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
 Name: "{commondesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: desktopicon
 
 [Run]
-Filename: "msiexec.exe"; Parameters: "/i ""{tmp}\node-v0.10.29-x64.msi"""; Components: nodejs
+Filename: "msiexec.exe"; Parameters: "/i ""{tmp}\node.msi"""; Components: nodejs
 Filename: "{app}\setup.bat"; Flags: shellexec;
 Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: shellexec postinstall skipifsilent;
 
