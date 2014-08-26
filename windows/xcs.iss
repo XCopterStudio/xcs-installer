@@ -6,6 +6,7 @@
 #define MyAppPublisher "X-Copter Studio team"
 #define MyAppURL "http://www.drones.ms.mff.cuni.cz/xcs/wiki"
 #define MyAppExeName "bin\onboard.bat"
+#define XCSdir "C:\Users\Ondrap\Documents\xcs"
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application.
@@ -41,50 +42,50 @@ Name: "source"; Description: "Source Files"; Types: full
 
 [Files]
 ;bat files
-Source: "C:\Users\Ondrap\Documents\xcs\onboard\onboard.bat"; DestDir: "{app}\bin"; Flags: ignoreversion; Components: main
+Source: "{#XCSdir}\onboard\onboard.bat"; DestDir: "{app}\bin"; Flags: ignoreversion; Components: main
 ;urbi
-Source: "C:\Frameworks\urbi-win64-vc12-release\bin\*"; DestDir: "{app}\bin"; Flags: ignoreversion recursesubdirs createallsubdirs; Components: main
-Source: "C:\Frameworks\urbi-win64-vc12-release\lib\*"; DestDir: "{app}\lib"; Flags: ignoreversion recursesubdirs createallsubdirs; Components: main
-Source: "C:\Frameworks\urbi-win64-vc12-release\include\*"; DestDir: "{app}\include"; Flags: ignoreversion recursesubdirs createallsubdirs; Components: source
-Source: "C:\Frameworks\urbi-win64-vc12-release\share\*"; DestDir: "{app}\share"; Flags: ignoreversion recursesubdirs createallsubdirs; Components: main
-;urbiscript files TODO: maybe some examples as independently components
-Source: "C:\Users\Ondrap\Documents\xcs\onboard\urbiscript\*"; DestDir: "{app}\share\xcs\urbiscript"; Flags: ignoreversion recursesubdirs createallsubdirs; Components: main
+Source: "{#XCSdir}\3rd-party\urbi\bin\*"; DestDir: "{app}\bin"; Flags: ignoreversion recursesubdirs createallsubdirs; Components: main
+Source: "{#XCSdir}\3rd-party\urbi\lib\*"; DestDir: "{app}\lib"; Flags: ignoreversion recursesubdirs createallsubdirs; Components: main
+Source: "{#XCSdir}\3rd-party\urbi\include\*"; DestDir: "{app}\include"; Flags: ignoreversion recursesubdirs createallsubdirs; Components: source
+Source: "{#XCSdir}\3rd-party\urbi\share\*"; DestDir: "{app}\share"; Flags: ignoreversion recursesubdirs createallsubdirs; Components: main
+;urbiscript files TODO: maybe some examples as independent components
+Source: "{#XCSdir}\onboard\urbiscript\*"; DestDir: "{app}\share\xcs\urbiscript"; Flags: ignoreversion recursesubdirs createallsubdirs; Components: main
 ;urbiscript examples
 
 ;xobjects
-Source: "C:\Users\Ondrap\Documents\xcs\onboard\build\bin\RelWithDebInfo\xlinedrawer.dll"; DestDir: "{app}\lib\xcs\xobject"; Flags: ignoreversion; Components: main 
-Source: "C:\Users\Ondrap\Documents\xcs\onboard\build\lib\RelWithDebInfo\*.dll"; DestDir: "{app}\lib\xcs\xobject"; Flags: ignoreversion; Components: main
-Source: "C:\Users\Ondrap\Documents\xcs\onboard\build\lib\RelWithDebInfo\xobject.lib"; DestDir: "{app}\bin"; Flags: ignoreversion; Components: main
-Source: "C:\Users\Ondrap\Documents\xcs\onboard\build\bin\RelWithDebInfo\*.dll"; DestDir: "{app}\bin"; Excludes: "xlinedrawer.dll"; Flags: ignoreversion; Components: main
+Source: "{#XCSdir}\onboard\build\bin\RelWithDebInfo\xlinedrawer.dll"; DestDir: "{app}\lib\xcs\xobject"; Flags: ignoreversion; Components: main 
+Source: "{#XCSdir}\onboard\build\lib\RelWithDebInfo\*.dll"; DestDir: "{app}\lib\xcs\xobject"; Flags: ignoreversion; Components: main
+Source: "{#XCSdir}\onboard\build\lib\RelWithDebInfo\xobject.lib"; DestDir: "{app}\bin"; Flags: ignoreversion; Components: main
+Source: "{#XCSdir}\onboard\build\bin\RelWithDebInfo\*.dll"; DestDir: "{app}\bin"; Excludes: "xlinedrawer.dll"; Flags: ignoreversion; Components: main
 ;xcs source files
 ;xcs
-Source: "C:\Users\Ondrap\Documents\xcs\onboard\src\xcs\exception.hpp"; DestDir: "{app}\include\xcs"; Flags: ignoreversion; Components: source
-Source: "C:\Users\Ondrap\Documents\xcs\onboard\src\xcs\logging.hpp"; DestDir: "{app}\include\xcs"; Flags: ignoreversion; Components: source
-Source: "C:\Users\Ondrap\Documents\xcs\onboard\build\xcs\xcs_export.h"; DestDir: "{app}\include\xcs"; Flags: ignoreversion; Components: source
+Source: "{#XCSdir}\onboard\src\xcs\exception.hpp"; DestDir: "{app}\include\xcs"; Flags: ignoreversion; Components: source
+Source: "{#XCSdir}\onboard\src\xcs\logging.hpp"; DestDir: "{app}\include\xcs"; Flags: ignoreversion; Components: source
+Source: "{#XCSdir}\onboard\build\xcs\xcs_export.h"; DestDir: "{app}\include\xcs"; Flags: ignoreversion; Components: source
 ;xci
-Source: "C:\Users\Ondrap\Documents\xcs\onboard\src\xcs\xci\xci.hpp"; DestDir: "{app}\include\xcs\xci"; Flags: ignoreversion; Components: source
+Source: "{#XCSdir}\onboard\src\xcs\xci\xci.hpp"; DestDir: "{app}\include\xcs\xci"; Flags: ignoreversion; Components: source
 ;xobject
-Source: "C:\Users\Ondrap\Documents\xcs\onboard\src\xcs\nodes\xobject\x.h"; DestDir: "{app}\include\xcs\nodes\xobject"; Flags: ignoreversion; Components: source
-Source: "C:\Users\Ondrap\Documents\xcs\onboard\src\xcs\nodes\xobject\*.hpp"; DestDir: "{app}\include\xcs\nodes\xobject"; Flags: ignoreversion; Components: source
-Source: "C:\Users\Ondrap\Documents\xcs\onboard\build\xcs\nodes\xobject\xobject_export.h"; DestDir: "{app}\include\xcs\nodes\xobject"; Flags: ignoreversion; Components: source
+Source: "{#XCSdir}\onboard\src\xcs\nodes\xobject\x.h"; DestDir: "{app}\include\xcs\nodes\xobject"; Flags: ignoreversion; Components: source
+Source: "{#XCSdir}\onboard\src\xcs\nodes\xobject\*.hpp"; DestDir: "{app}\include\xcs\nodes\xobject"; Flags: ignoreversion; Components: source
+Source: "{#XCSdir}\onboard\build\xcs\nodes\xobject\xobject_export.h"; DestDir: "{app}\include\xcs\nodes\xobject"; Flags: ignoreversion; Components: source
 ;xstructs
-Source: "C:\Users\Ondrap\Documents\xcs\onboard\src\xcs\types\*"; DestDir: "{app}\include\xcs\types"; Excludes: "type_utils.hpp"; Flags: ignoreversion; Components: source
+Source: "{#XCSdir}\onboard\src\xcs\types\*"; DestDir: "{app}\include\xcs\types"; Excludes: "type_utils.hpp"; Flags: ignoreversion; Components: source
 
 ;xcs general cmakes
-Source: "C:\Users\Ondrap\Documents\xcs\onboard\src\CMakeLists_install.txt"; DestDir: "{app}\share\"; DestName: CMakeLists.txt; Flags: ignoreversion; Components: source
-Source: "C:\Users\Ondrap\Documents\xcs\onboard\src\cmake\FindUrbiAll.cmake"; DestDir: "{app}\share\cmake\xcs"; Flags: ignoreversion; Components: source
-Source: "C:\Users\Ondrap\Documents\xcs\onboard\src\cmake\common.cmake"; DestDir: "{app}\share\cmake\xcs"; Flags: ignoreversion; Components: source
-Source: "C:\Users\Ondrap\Documents\xcs\onboard\src\cmake\platforms.cmake"; DestDir: "{app}\share\cmake\xcs"; Flags: ignoreversion; Components: source
-Source: "C:\Users\Ondrap\Documents\xcs\onboard\src\cmake\xlibrary.cmake"; DestDir: "{app}\share\cmake\xcs"; Flags: ignoreversion; Components: source
-Source: "C:\Users\Ondrap\Documents\xcs\onboard\src\cmake\config_install.cmake"; DestDir: "{app}\share\cmake\xcs"; DestName: config.cmake; Flags: ignoreversion; Components: source
+Source: "{#XCSdir}\onboard\src\CMakeLists_install.txt"; DestDir: "{app}\share\"; DestName: CMakeLists.txt; Flags: ignoreversion; Components: source
+Source: "{#XCSdir}\onboard\src\cmake\FindUrbiAll.cmake"; DestDir: "{app}\share\cmake\xcs"; Flags: ignoreversion; Components: source
+Source: "{#XCSdir}\onboard\src\cmake\common.cmake"; DestDir: "{app}\share\cmake\xcs"; Flags: ignoreversion; Components: source
+Source: "{#XCSdir}\onboard\src\cmake\platforms.cmake"; DestDir: "{app}\share\cmake\xcs"; Flags: ignoreversion; Components: source
+Source: "{#XCSdir}\onboard\src\cmake\xlibrary.cmake"; DestDir: "{app}\share\cmake\xcs"; Flags: ignoreversion; Components: source
+Source: "{#XCSdir}\onboard\src\cmake\config_install.cmake"; DestDir: "{app}\share\cmake\xcs"; DestName: config.cmake; Flags: ignoreversion; Components: source
 
 ;xcs example xobject
-Source: "C:\Users\Ondrap\Documents\xcs\onboard\src\xcs\nodes\multiplexer.xob\*"; DestDir: "{app}\share\xcs\examples\nodes\multiplexer.xob"; Flags: ignoreversion; Components: source
+Source: "{#XCSdir}\onboard\src\xcs\nodes\multiplexer.xob\*"; DestDir: "{app}\share\xcs\examples\nodes\multiplexer.xob"; Flags: ignoreversion; Components: source
 
 ;xsettings files
-Source: "C:\Users\Ondrap\Documents\xcs\onboard\xsettings\*"; DestDir: "{app}\etc\xcs\xsettings"; Flags: ignoreversion recursesubdirs createallsubdirs; Components: main
+Source: "{#XCSdir}\onboard\xsettings\*"; DestDir: "{app}\etc\xcs\xsettings"; Flags: ignoreversion recursesubdirs createallsubdirs; Components: main
 ;dfg settings
-Source: "C:\Users\Ondrap\Documents\xcs\onboard\dfgs\*"; DestDir: "{app}\share\xcs\dfgs"; Flags: ignoreversion recursesubdirs createallsubdirs; Components: main
+Source: "{#XCSdir}\onboard\dfgs\*"; DestDir: "{app}\share\xcs\dfgs"; Flags: ignoreversion recursesubdirs createallsubdirs; Components: main
 
 ;3-rd party files
 ;windows files
@@ -94,24 +95,24 @@ Source: "C:\Windows\System32\msvcp100.dll"; DestDir: "{app}\bin"; Flags: ignorev
 Source: "C:\Windows\System32\msvcr100.dll"; DestDir: "{app}\bin"; Flags: ignoreversion; Components: main
 Source: "C:\Windows\System32\msvcr100_clr0400.dll"; DestDir: "{app}\bin"; Flags: ignoreversion; Components: main
 ;blast lapack
-Source: "C:\Frameworks\blas\lib\blas_win64_MT.dll"; DestDir: "{app}\bin"; Flags: ignoreversion; Components: main
-Source: "C:\Frameworks\lapack\lib\lapack_win64_MT.dll"; DestDir: "{app}\bin"; Flags: ignoreversion; Components: main
+Source: "{#XCSdir}\3rd-party\blas\blas_win64_MT.dll"; DestDir: "{app}\bin"; Flags: ignoreversion; Components: main
+Source: "{#XCSdir}\3rd-party\lapack\lapack_win64_MT.dll"; DestDir: "{app}\bin"; Flags: ignoreversion; Components: main
 ;boost libraries
-Source: "C:\Frameworks\boost_64\lib\boost_system-vc120-mt-1_55.dll"; DestDir: "{app}\bin"; Flags: ignoreversion; Components: main
-Source: "C:\Frameworks\boost_64\lib\boost_filesystem-vc120-mt-1_55.dll"; DestDir: "{app}\bin"; Flags: ignoreversion; Components: main
-Source: "C:\Frameworks\boost_64\lib\boost_log-vc120-mt-1_55.dll"; DestDir: "{app}\bin"; Flags: ignoreversion; Components: main
-Source: "C:\Frameworks\boost_64\lib\boost_chrono-vc120-mt-1_55.dll"; DestDir: "{app}\bin"; Flags: ignoreversion; Components: main
-Source: "C:\Frameworks\boost_64\lib\boost_date_time-vc120-mt-1_55.dll"; DestDir: "{app}\bin"; Flags: ignoreversion; Components: main
-Source: "C:\Frameworks\boost_64\lib\boost_thread-vc120-mt-1_55.dll"; DestDir: "{app}\bin"; Flags: ignoreversion; Components: main
-Source: "C:\Frameworks\boost_64\lib\boost_regex-vc120-mt-1_55.dll"; DestDir: "{app}\bin"; Flags: ignoreversion; Components: main
+Source: "{#XCSdir}\3rd-party\boost\lib\boost_system-vc120-mt-1_55.dll"; DestDir: "{app}\bin"; Flags: ignoreversion; Components: main
+Source: "{#XCSdir}\3rd-party\boost\lib\boost_filesystem-vc120-mt-1_55.dll"; DestDir: "{app}\bin"; Flags: ignoreversion; Components: main
+Source: "{#XCSdir}\3rd-party\boost\lib\boost_log-vc120-mt-1_55.dll"; DestDir: "{app}\bin"; Flags: ignoreversion; Components: main
+Source: "{#XCSdir}\3rd-party\boost\lib\boost_chrono-vc120-mt-1_55.dll"; DestDir: "{app}\bin"; Flags: ignoreversion; Components: main
+Source: "{#XCSdir}\3rd-party\boost\lib\boost_date_time-vc120-mt-1_55.dll"; DestDir: "{app}\bin"; Flags: ignoreversion; Components: main
+Source: "{#XCSdir}\3rd-party\boost\lib\boost_thread-vc120-mt-1_55.dll"; DestDir: "{app}\bin"; Flags: ignoreversion; Components: main
+Source: "{#XCSdir}\3rd-party\boost\lib\boost_regex-vc120-mt-1_55.dll"; DestDir: "{app}\bin"; Flags: ignoreversion; Components: main
 
-Source: "C:\Frameworks\boost_64\lib\*.dll"; DestDir: "{app}\bin"; Flags: ignoreversion; Components: source
-Source: "C:\Frameworks\boost_64\lib\*.lib"; DestDir: "{app}\lib"; Flags: ignoreversion; Components: source
-Source: "C:\Frameworks\boost_64\include\*"; DestDir: "{app}\include"; Flags: recursesubdirs createallsubdirs ignoreversion; Components: source
+Source: "{#XCSdir}\3rd-party\boost\lib\*.dll"; DestDir: "{app}\bin"; Flags: ignoreversion; Components: source
+Source: "{#XCSdir}\3rd-party\boost\lib\*.lib"; DestDir: "{app}\lib"; Flags: ignoreversion; Components: source
+Source: "{#XCSdir}\3rd-party\boost\include\*"; DestDir: "{app}\include"; Flags: recursesubdirs createallsubdirs ignoreversion; Components: source
 ;libav
-Source: "C:\Frameworks\libav-9_7\bin\*.dll"; DestDir: "{app}\bin"; Flags: ignoreversion; Components: main
+Source: "{#XCSdir}\3rd-party\libav\bin\*.dll"; DestDir: "{app}\bin"; Flags: ignoreversion; Components: main
 ;pthread
-Source: "C:\Frameworks\pthreads-w32-2-9-1-release\Pre-built.2\dll\x64\pthreadVC2.dll"; DestDir: "{app}\bin"; Flags: ignoreversion; Components: main
+Source: "{#XCSdir}\3rd-party\pthreads\Pre-built.2\dll\x64\pthreadVC2.dll"; DestDir: "{app}\bin"; Flags: ignoreversion; Components: main
 
 
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
