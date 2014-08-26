@@ -112,7 +112,7 @@ Source: "{#XCSdir}\3rd-party\boost\include\*"; DestDir: "{app}\include"; Flags: 
 ;libav
 Source: "{#XCSdir}\3rd-party\libav\bin\*.dll"; DestDir: "{app}\bin"; Flags: ignoreversion; Components: main
 ;pthread
-Source: "{#XCSdir}\3rd-party\pthreads\Pre-built.2\dll\x64\pthreadVC2.dll"; DestDir: "{app}\bin"; Flags: ignoreversion; Components: main
+Source: "{#XCSdir}\3rd-party\pthreads\dll\x64\pthreadVC2.dll"; DestDir: "{app}\bin"; Flags: ignoreversion; Components: main
 
 
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
