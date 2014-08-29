@@ -5,8 +5,8 @@
 MK_FILE := $(abspath $(lastword $(MAKEFILE_LIST)))
 MK_DIR := $(patsubst %/,%,$(dir $(MK_FILE)))
 
-ONBOARD_SRC_DIR=$(MK_DIR)/../onboard/src
-ONBOARD_BUILD_DIR=$(MK_DIR)/../build_$(DEB_BUILD_ARCH)
+ONBOARD_SRC_DIR=$(MK_DIR)/../xcs/onboard/src
+ONBOARD_BUILD_DIR=$(MK_DIR)/build_$(DEB_BUILD_ARCH)
 ONBOARD_INS_DIR=$(MK_DIR)/tmp
 
 
@@ -75,8 +75,8 @@ prepare_binary: fix_permissions
 	touch $@
 
 fix_permissions:
-	chmod 755 $(MK_DIR)/../onboard/bin/*
-	chmod 755 $(MK_DIR)/../server/xcs-server
+	chmod 755 $(MK_DIR)/../xcs/onboard/bin/*
+	chmod 755 $(MK_DIR)/../xcs/server/xcs-server
 
 bin-driver-%: prepare_binary
 	mkdir -p $(MK_DIR)/xcs-driver-$*/DEBIAN

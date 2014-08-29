@@ -1,4 +1,4 @@
-../../onboard/bin/xcs-onboard usr/bin
-../../onboard/data/* usr/share/xcs
-../../onboard/urbiscript/onboard/* usr/share/xcs/urbiscript/onboard
+../../xcs/onboard/bin/xcs-onboard usr/bin
+../../xcs/onboard/data/* usr/share/xcs
+../../xcs/onboard/urbiscript/onboard/* usr/share/xcs/urbiscript/onboard
 

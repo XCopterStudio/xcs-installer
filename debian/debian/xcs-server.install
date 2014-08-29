@@ -1,4 +1,4 @@
-../../server/xcs-server usr/bin
-../../server/*.js ../../server/*.json opt/xcs/server
-../../server/client/* opt/xcs/server/client
+../../xcs/server/xcs-server usr/bin
+../../xcs/server/*.js ../../server/*.json opt/xcs/server
+../../xcs/server/client/* opt/xcs/server/client
 

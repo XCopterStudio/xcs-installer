@@ -1,0 +1,3 @@
+[submodule "debian/xcs"]
+	path = debian/xcs
+	url = drones.ms.mff.cuni.cz:/srv/xcs/repo/xcs.git

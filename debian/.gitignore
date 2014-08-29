@@ -1,0 +1,6 @@
+debian/*.log
+debian/xcs-*/*
+debian/files
+debian/substvars
+debian/tmp
+debian/build_*
