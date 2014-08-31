@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VERSION=`git describe --tags`
+VERSION=`cd ../xcs && git describe --tags`
 DATE=`date -R`
 
 cat - changelog >changelog.tmp <<EOD
