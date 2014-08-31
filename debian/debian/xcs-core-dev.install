@@ -1,2 +1,3 @@
 include/xcs/*.hpp include/xcs/*.h usr/include/xcs
+include/xcs/types/* usr/include/xcs/types
 include/xcs/nodes/xobject/*.hpp include/xcs/nodes/xobject/*.h usr/include/xcs/nodes/xobject
