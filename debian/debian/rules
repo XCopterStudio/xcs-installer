@@ -61,7 +61,7 @@ binary-arch: bin-xcs-core\
 clean: $(addprefix clean-driver-, $(DRIVERS))\
   $(addprefix clean-node-, $(NODES))\
   $(addprefix clean-simple-, $(SIMPLE))
-	rm -f build-arch binary-arch prepare_binary
+	rm -f build-arch binary-arch prepare_binary $(MK_DIR)/files
 	rm -rf $(ONBOARD_BUILD_DIR) $(ONBOARGD_INS_DIR)
 	rm -rf $(MK_DIR)/xcs-core $(MK_DIR)/xcs-driver-dev 
 
