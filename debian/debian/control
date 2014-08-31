@@ -141,7 +141,7 @@ Architecture: any
 Depends: ${shlibs-driver-vrep:Depends}
 Description: XCI implementation for V-REP simulator
 
-Package: xcs-nodes-all
+Package: xcs-drivers-all
 Architecture: all
 Depends: xcs-driver-dodo,
   xcs-driver-parrot,
