@@ -141,13 +141,20 @@ Architecture: any
 Depends: ${shlibs-driver-vrep:Depends}
 Description: XCI implementation for V-REP simulator
 
+Package: xcs-nodes-all
+Architecture: all
+Depends: xcs-driver-dodo,
+  xcs-driver-parrot,
+  xcs-driver-vrep
+Description: Metapackage of all XCS XCI drivers
+
 #
 # Urbiscripts
 #
 Package: xcs-onboard
 Architecture: all
 Depends: urbi, xcs-node-settings, xcs-node-json, xcs-core, xcs-node-guiproxy
-Recommends: xcs-nodes-all
+Recommends: xcs-nodes-all, xcs-drivers-all
 Description: X-Copter Studio onboard component
 
 #
@@ -239,7 +246,7 @@ Description: XCS node settings...
 Package: xcs-node-xci
 Architecture: any
 Depends: ${shlibs-node-xci:Depends}
-Recommends: xcs-driver-parrot, xcs-driver-vrep
+Recommends: xcs-driver-parrot, xcs-driver-vrep, xcs-driver-dodo
 Description: XCS node xci...
 
 Package: xcs-nodes-all

@@ -34,7 +34,7 @@ xci
 
 DRIVERS=dodo parrot vrep
 
-SIMPLE=xcs-onboard xcs-nodes-all xcs-core-dev xcs-server
+SIMPLE=xcs-onboard xcs-nodes-all xcs-core-dev xcs-server xcs-drivers-all
 
 build: build-arch build-indep
 
