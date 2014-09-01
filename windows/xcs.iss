@@ -57,19 +57,19 @@ Source: "{#XCSdir}\3rd-party\urbi\bin\*"; DestDir: "{app}\bin"; Flags: ignorever
 Source: "{#XCSdir}\3rd-party\urbi\lib\*"; DestDir: "{app}\lib"; Flags: ignoreversion recursesubdirs createallsubdirs; Components: main
 Source: "{#XCSdir}\3rd-party\urbi\include\*"; DestDir: "{app}\include"; Flags: ignoreversion recursesubdirs createallsubdirs; Components: source
 Source: "{#XCSdir}\3rd-party\urbi\share\*"; DestDir: "{app}\share"; Flags: ignoreversion recursesubdirs createallsubdirs; Components: main
-;urbiscript files TODO: maybe some examples as independent components
-Source: "{#XCSdir}\onboard\urbiscript\*"; DestDir: "{app}\share\xcs\urbiscript"; Flags: ignoreversion recursesubdirs createallsubdirs; Components: main
-;urbiscript examples
+;urbiscripts
+Source: "{#XCSdir}\onboard\urbiscript\onboard\*"; DestDir: "{app}\share\xcs\urbiscript\onboard"; Flags: ignoreversion recursesubdirs createallsubdirs; Components: main
 
 ;xobjects
-Source: "{#XCSdir}\onboard\build\bin\{#BuildType}\xline_drawer.dll"; DestDir: "{app}\lib\xcs\xobject"; Flags: ignoreversion; Components: main 
-Source: "{#XCSdir}\onboard\build\lib\{#BuildType}\*.dll"; DestDir: "{app}\lib\xcs\xobject"; Flags: ignoreversion; Components: main
+Source: "{#XCSdir}\onboard\build\bin\{#BuildType}\xline_drawer.dll"; DestDir: "{app}\lib\xcs\xobjects"; Flags: ignoreversion; Components: main 
+Source: "{#XCSdir}\onboard\build\lib\{#BuildType}\*.dll"; DestDir: "{app}\lib\xcs\xobjects"; Flags: ignoreversion; Components: main
 Source: "{#XCSdir}\onboard\build\lib\{#BuildType}\xobject.lib"; DestDir: "{app}\bin"; Flags: ignoreversion; Components: main
 Source: "{#XCSdir}\onboard\build\bin\{#BuildType}\*.dll"; DestDir: "{app}\bin"; Excludes: "xlinedrawer.dll"; Flags: ignoreversion; Components: main
 ;xcs source files
 ;xcs
 Source: "{#XCSdir}\onboard\src\xcs\exception.hpp"; DestDir: "{app}\include\xcs"; Flags: ignoreversion; Components: source
 Source: "{#XCSdir}\onboard\src\xcs\logging.hpp"; DestDir: "{app}\include\xcs"; Flags: ignoreversion; Components: source
+Source: "{#XCSdir}\onboard\src\xcs\pid.hpp"; DestDir: "{app}\include\xcs"; Flags: ignoreversion; Components: source
 Source: "{#XCSdir}\onboard\build\xcs\xcs_export.h"; DestDir: "{app}\include\xcs"; Flags: ignoreversion; Components: source
 ;xci
 Source: "{#XCSdir}\onboard\src\xcs\xci\xci.hpp"; DestDir: "{app}\include\xcs\xci"; Flags: ignoreversion; Components: source
@@ -81,16 +81,12 @@ Source: "{#XCSdir}\onboard\build\xcs\nodes\xobject\xobject_export.h"; DestDir: "
 Source: "{#XCSdir}\onboard\src\xcs\types\*"; DestDir: "{app}\include\xcs\types"; Excludes: "type_utils.hpp"; Flags: ignoreversion; Components: source
 
 ;xcs general cmakes
-Source: "{#XCSdir}\onboard\src\CMakeLists_install.txt"; DestDir: "{app}\share\"; DestName: CMakeLists.txt; Flags: ignoreversion; Components: source
 Source: "{#XCSdir}\onboard\src\cmake\FindUrbiAll.cmake"; DestDir: "{app}\share\cmake\xcs"; Flags: ignoreversion; Components: source
-Source: "{#XCSdir}\onboard\src\cmake\common.cmake"; DestDir: "{app}\share\cmake\xcs"; Flags: ignoreversion; Components: source
-Source: "{#XCSdir}\onboard\src\cmake\platforms.cmake"; DestDir: "{app}\share\cmake\xcs"; Flags: ignoreversion; Components: source
-Source: "{#XCSdir}\onboard\src\cmake\xlibrary.cmake"; DestDir: "{app}\share\cmake\xcs"; Flags: ignoreversion; Components: source
-Source: "{#XCSdir}\onboard\src\cmake\config_install.cmake"; DestDir: "{app}\share\cmake\xcs"; DestName: config.cmake; Flags: ignoreversion; Components: source
 
 ;xcs example xobject
-Source: "{#XCSdir}\onboard\src\xcs\nodes\multiplexer.xob\*"; DestDir: "{app}\share\xcs\examples\nodes\multiplexer.xob"; Flags: ignoreversion; Components: source
-Source: "{#XCSdir}\onboard\src\xcs\nodes\pid.xob\*"; DestDir: "{app}\share\xcs\examples\nodes\pid.xob"; Flags: ignoreversion; Components: source;
+Source: "{#XCSdir}\onboard\src\xcs\nodes\pid.xob\CMakeLists_example.txt"; DestName: "CMakeLists.txt"; DestDir: "{app}\share\xcs\examples\nodes\pid.xob"; Flags: ignoreversion; Components: source;
+Source: "{#XCSdir}\onboard\src\xcs\nodes\pid.xob\x_pid.hpp"; DestDir: "{app}\share\xcs\examples\nodes\pid.xob"; Flags: ignoreversion; Components: source;
+Source: "{#XCSdir}\onboard\src\xcs\nodes\pid.xob\x_pid.cpp"; DestDir: "{app}\share\xcs\examples\nodes\pid.xob"; Flags: ignoreversion; Components: source;
 
 ;console scripts
 Source: "{#XCSdir}\onboard\data\scripts\*"; DestDir: "{app}\data\scripts"; Flags: ignoreversion recursesubdirs createallsubdirs; Components: main
@@ -121,7 +117,7 @@ Source: "{#XCSdir}\3rd-party\boost\lib\boost_regex-vc120-mt-1_55.dll"; DestDir: 
 
 Source: "{#XCSdir}\3rd-party\boost\lib\*.dll"; DestDir: "{app}\bin"; Flags: ignoreversion; Components: source
 Source: "{#XCSdir}\3rd-party\boost\lib\*.lib"; DestDir: "{app}\lib"; Flags: ignoreversion; Components: source
-Source: "{#XCSdir}\3rd-party\boost\include\*"; DestDir: "{app}\include"; Flags: recursesubdirs createallsubdirs ignoreversion; Components: source
+Source: "{#XCSdir}\3rd-party\boost\include\boost-1_55\*"; DestDir: "{app}\include"; Flags: recursesubdirs createallsubdirs ignoreversion; Components: source
 ;opencv libraries
 Source: "{#XCSdir}\3rd-party\opencv\x64\vc12\bin\*.dll"; DestDir: "{app}\bin"; Flags: ignoreversion; Components: main
 
@@ -149,5 +145,5 @@ ValueType: expandsz; ValueName: "URBI_PATH"; ValueData: "{app}\share\xcs\urbiscr
 Flags: uninsdeletevalue
 
 Root: HKLM; Subkey: "SYSTEM\CurrentControlSet\Control\Session Manager\Environment"; \
-ValueType: expandsz; ValueName: "URBI_UOBJECT_PATH"; ValueData: "{app}\lib\xcs\xobject";   \
+ValueType: expandsz; ValueName: "URBI_UOBJECT_PATH"; ValueData: "{app}\lib\xcs\xobjects";   \
 Flags: uninsdeletevalue

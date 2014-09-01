@@ -44,7 +44,7 @@ Name: "nodejs"; Description: "Nodejs"; Types: full
 [Files]
 Source: "{#NODEdir}\node.msi"; DestDir: "{tmp}"; Components: nodejs
 Source: "{#XCSdir}\server\run.bat"; DestDir: "{app}"; Flags: ignoreversion; Components: main
-Source: "{#XCSdir}\server\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs; Components: main
+Source: "{#XCSdir}\server\*"; DestDir: "{app}"; Excludes: "node_modules"; Flags: ignoreversion recursesubdirs createallsubdirs; Components: main
 Source: "{#XCSdir}\server\setup.bat"; DestDir: "{app}"; Flags: ignoreversion; Components: main
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
