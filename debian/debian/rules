@@ -34,7 +34,8 @@ xci
 
 DRIVERS=dodo parrot vrep
 
-SIMPLE=xcs-onboard xcs-nodes-all xcs-core-dev xcs-server xcs-drivers-all
+SIMPLE=xcs-onboard xcs-nodes-all xcs-core-dev xcs-server xcs-drivers-all\
+xcs-onboard-examples xcs-doc
 
 build: build-arch build-indep
 
@@ -72,8 +73,8 @@ clean: $(addprefix clean-driver-, $(DRIVERS))\
 prepare_binary: fix_permissions
 	dh_install --sourcedir=$(MK_DIR)/tmp
 	dh_installdeb
-	mv $(MK_DIR)/xcs-onboard-examples/usr/share/examples/pid.xob/CMakeLists_example.txt\
-		$(MK_DIR)/xcs-onboard-examples/usr/share/examples/pid.xob/CMakeLists.txt
+	mv $(MK_DIR)/xcs-onboard-examples/usr/share/xcs/examples/pid.xob/CMakeLists_example.txt\
+		$(MK_DIR)/xcs-onboard-examples/usr/share/xcs/examples/pid.xob/CMakeLists.txt
 	touch $@
 
 fix_permissions:

@@ -114,7 +114,7 @@ Description: Core libraries for X-Copter Studio
 
 Package: xcs-core-dev
 Architecture: all
-Depends: xcs-core, urbi-dev, libboost-dev
+Depends: xcs-core, urbi-dev, libboost-dev, libboost-system-dev
 Recommends: xcs-driver-dev
 Description: Development files for X-Copter Studio
 

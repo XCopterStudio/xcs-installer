@@ -1,2 +1,3 @@
-../../xcs/onboard/src/nodes/pid.xob usr/share/xcs/examples
+../../xcs/onboard/src/xcs/nodes/pid.xob usr/share/xcs/examples
+../../xcs/onboard/src/cmake/FindUrbiAll.cmake usr/share/xcs/examples/pid.xob
 
