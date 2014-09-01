@@ -118,6 +118,15 @@ Depends: xcs-core, urbi-dev, libboost-dev
 Recommends: xcs-driver-dev
 Description: Development files for X-Copter Studio
 
+Package: xcs-onboard-examples
+Architecture: all
+Depends: xcs-core-dev
+Description: Example source files for X-Copter Studio developers
+
+Package: xcs-doc
+Architecture: all
+Description: Documentation resources for X-Copter Studio
+
 #
 # Drivers
 #
