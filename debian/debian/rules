@@ -84,7 +84,7 @@ fix_permissions:
 
 bin-driver-%: prepare_binary
 	mkdir -p $(MK_DIR)/xcs-driver-$*/DEBIAN
-	dpkg-shlibdeps -pshlibs-driver-$* $(ONBOARD_INS_DIR)/lib/xci_$*.so 2>/dev/null
+	dpkg-shlibdeps -pshlibs-driver-$* $(ONBOARD_INS_DIR)/lib/libxci_$*.so 2>/dev/null
 	dpkg-gencontrol -pxcs-driver-$* -P$(MK_DIR)/xcs-driver-$*
 	dpkg-deb -b $(MK_DIR)/xcs-driver-$* ..
 
