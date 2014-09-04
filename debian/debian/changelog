@@ -1,3 +1,9 @@
+xcs (0.2~build2) unstable; urgency=low
+
+  * Building line drawer.
+
+ -- Michal Koutný  <xm.koutny@gmail.com> Thu, 04 Sep 2014 10:30:50 +0200
+
 xcs (0.2) unstable; urgency=low
 
   * Automatic changelog entry.

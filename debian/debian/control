@@ -212,10 +212,10 @@ Architecture: any
 Depends: ${shlibs-node-json:Depends}
 Description: XCS node json...
 
-#Package: xcs-node-line-drawer
-#Architecture: any
-#Depends: ${shlibs-node-line-drawer:Depends}
-#Description: XCS node line-drawer...
+Package: xcs-node-line-drawer
+Architecture: any
+Depends: ${shlibs-node-line-drawer:Depends}
+Description: XCS node line-drawer...
 
 Package: xcs-node-line-finder
 Architecture: any
