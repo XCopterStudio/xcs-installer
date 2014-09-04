@@ -214,7 +214,7 @@ Description: XCS node json...
 
 Package: xcs-node-line-drawer
 Architecture: any
-Depends: ${shlibs-node-line-drawer:Depends}
+Depends: ${shlibs-node-line-drawer:Depends}, libopencv-highgui2.4
 Description: XCS node line-drawer...
 
 Package: xcs-node-line-finder
@@ -224,7 +224,7 @@ Description: XCS node line-finder...
 
 Package: xcs-node-line-keeper
 Architecture: any
-Depends: ${shlibs-node-line-keeper:Depends}
+Depends: ${shlibs-node-line-keeper:Depends}, xcs-node-line-drawer
 Description: XCS node line-keeper...
 
 Package: xcs-node-localization

@@ -1,3 +1,21 @@
+xcs (0.2-2-ga47cea8~build3) unstable; urgency=low
+
+  * Fixed dependency.
+
+ -- Michal Koutný  <xm.koutny@gmail.com> Thu, 04 Sep 2014 10:21:58 +0200
+
+xcs (0.2-2-ga47cea8~build2) unstable; urgency=low
+
+  * Fixed dependency.
+
+ -- Michal Koutný  <xm.koutny@gmail.com> Thu, 04 Sep 2014 10:21:58 +0200
+
+xcs (0.2-2-ga47cea8) unstable; urgency=low
+
+  * Automatic changelog entry.
+
+ -- Michal Koutný  <xm.koutny@gmail.com> Thu, 04 Sep 2014 10:21:58 +0200
+
 xcs (0.2~build2) unstable; urgency=low
 
   * Building line drawer.
