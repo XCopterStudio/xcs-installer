@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "X-Copter Studio server"
-#define MyAppVersion "0.1"
+#define MyAppVersion "0.2"
 #define MyAppPublisher "X-Copter Studio team"
 #define MyAppURL "http://drones.ms.mff.cuni.cz/xcs/wiki"
 #define MyAppExeName "run.bat"
@@ -28,7 +28,8 @@ OutputBaseFilename=xcs_server_setup
 Compression=lzma
 SolidCompression=yes
 ArchitecturesInstallIn64BitMode=x64
-PrivilegesRequired=poweruser
+PrivilegesRequired=admin
+ChangesEnvironment=yes
 
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"
@@ -44,7 +45,7 @@ Name: "nodejs"; Description: "Nodejs"; Types: full
 [Files]
 Source: "{#NODEdir}\node.msi"; DestDir: "{tmp}"; Components: nodejs
 Source: "{#XCSdir}\server\run.bat"; DestDir: "{app}"; Flags: ignoreversion; Components: main
-Source: "{#XCSdir}\server\*"; DestDir: "{app}"; Excludes: "node_modules"; Flags: ignoreversion recursesubdirs createallsubdirs; Components: main
+Source: "{#XCSdir}\server\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs; Components: main
 Source: "{#XCSdir}\server\setup.bat"; DestDir: "{app}"; Flags: ignoreversion; Components: main
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
@@ -55,6 +56,6 @@ Name: "{commondesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: 
 
 [Run]
 Filename: "msiexec.exe"; Parameters: "/i ""{tmp}\node.msi"""; Components: nodejs
-Filename: "{app}\setup.bat"; Flags: shellexec;
-Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: shellexec postinstall skipifsilent;
+;Filename: "{app}\setup.bat"; Flags: shellexec runascurrentuser waituntilterminated;
+;Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: shellexec postinstall skipifsilent;
 
