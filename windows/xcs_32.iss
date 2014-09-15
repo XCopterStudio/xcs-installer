@@ -28,7 +28,6 @@ OutputDir=C:\Users\Ondrap\Documents\xcs_installer
 OutputBaseFilename=xcs_onboard_setup
 Compression=lzma
 SolidCompression=yes
-ArchitecturesInstallIn64BitMode=x64
 ChangesEnvironment=yes
 PrivilegesRequired=admin
 
