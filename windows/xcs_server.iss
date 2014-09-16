@@ -43,7 +43,7 @@ Name: "main"; Description: "Main Files"; Types: full compact custom; Flags: fixe
 Name: "nodejs"; Description: "Nodejs"; Types: full
 
 [Files]
-Source: "{#NODEdir}\node.msi"; DestDir: "{tmp}"; Components: nodejs
+Source: "{#NODEdir}\x64\node.msi"; DestDir: "{tmp}"; Components: nodejs
 Source: "{#XCSdir}\server\run.bat"; DestDir: "{app}"; Flags: ignoreversion; Components: main
 Source: "{#XCSdir}\server\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs; Components: main
 Source: "{#XCSdir}\server\setup.bat"; DestDir: "{app}"; Flags: ignoreversion; Components: main

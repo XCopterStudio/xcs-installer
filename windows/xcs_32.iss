@@ -7,7 +7,7 @@
 #define MyAppURL "http://www.drones.ms.mff.cuni.cz/xcs/wiki"
 #define MyAppExeName "onboard.bat"
 #define XCSdir "C:\Users\Ondrap\Documents\xcs_32"
-#define MSVCP100dir "C:\Users\Ondrap\Documents\xcs-installer\windows"
+#define LIBRARYdir "C:\Users\Ondrap\Documents\xcs-installer\windows"
 #define BuildType "Release"
 
 [Setup]
@@ -25,7 +25,7 @@ AppUpdatesURL={#MyAppURL}
 DefaultDirName={pf}\{#MyAppName}
 DefaultGroupName={#MyAppName}
 OutputDir=C:\Users\Ondrap\Documents\xcs_installer
-OutputBaseFilename=xcs_onboard_setup
+OutputBaseFilename=xcs_onboard_setup_32bit
 Compression=lzma
 SolidCompression=yes
 ChangesEnvironment=yes
@@ -101,8 +101,7 @@ Source: "{#XCSdir}\onboard\data\dfgs\*"; DestDir: "{app}\data\dfgs"; Flags: igno
 ;windows files
 Source: "C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\redist\x86\Microsoft.VC120.CRT\msvcp120.dll"; DestDir: "{app}\bin"; Flags: ignoreversion; Components: main
 Source: "C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\redist\x86\Microsoft.VC120.CRT\msvcr120.dll"; DestDir: "{app}\bin"; Flags: ignoreversion; Components: main
-Source: "{#MSVCP100dir}\msvcp100.dll"; DestDir: "{app}\bin"; Flags: ignoreversion; Components: main
-Source: "{#MSVCP100dir}\msvcr100.dll"; DestDir: "{app}\bin"; Flags: ignoreversion; Components: main
+Source: "{#LIBRARYdir}\x86\*.dll"; DestDir: "{app}\bin"; Flags: ignoreversion; Components: main
 ;blast lapack
 Source: "{#XCSdir}\3rd-party\blas\libblas.dll"; DestDir: "{app}\bin"; Flags: ignoreversion; Components: main
 Source: "{#XCSdir}\3rd-party\lapack\liblapack.dll"; DestDir: "{app}\bin"; Flags: ignoreversion; Components: main
