@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "X-Copter Studio onboard"
-#define MyAppVersion "0.2"
+#define MyAppVersion "0.3"
 #define MyAppPublisher "X-Copter Studio team"
 #define MyAppURL "http://www.drones.ms.mff.cuni.cz/xcs/wiki"
 #define MyAppExeName "onboard.bat"
@@ -25,7 +25,7 @@ AppUpdatesURL={#MyAppURL}
 DefaultDirName={pf}\{#MyAppName}
 DefaultGroupName={#MyAppName}
 OutputDir=C:\Users\Ondrap\Documents\xcs_installer
-OutputBaseFilename=xcs_onboard_setup
+OutputBaseFilename=xcs_onboard_setup_64bit
 Compression=lzma
 SolidCompression=yes
 ArchitecturesInstallIn64BitMode=x64
