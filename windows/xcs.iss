@@ -102,8 +102,7 @@ Source: "{#XCSdir}\onboard\data\dfgs\*"; DestDir: "{app}\data\dfgs"; Flags: igno
 ;windows files
 Source: "C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\redist\x64\Microsoft.VC120.CRT\msvcp120.dll"; DestDir: "{app}\bin"; Flags: ignoreversion; Components: main
 Source: "C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\redist\x64\Microsoft.VC120.CRT\msvcr120.dll"; DestDir: "{app}\bin"; Flags: ignoreversion; Components: main
-Source: "{#MSVCP100dir}\x64\msvcp100.dll"; DestDir: "{app}\bin"; Flags: ignoreversion; Components: main
-Source: "{#MSVCP100dir}\x64\msvcr100.dll"; DestDir: "{app}\bin"; Flags: ignoreversion; Components: main
+Source: "{#MSVCP100dir}\x64\*.dll"; DestDir: "{app}\bin"; Flags: ignoreversion; Components: main
 ;blast lapack
 Source: "{#XCSdir}\3rd-party\blas\blas_win64_MT.dll"; DestDir: "{app}\bin"; Flags: ignoreversion; Components: main
 Source: "{#XCSdir}\3rd-party\lapack\lapack_win64_MT.dll"; DestDir: "{app}\bin"; Flags: ignoreversion; Components: main
